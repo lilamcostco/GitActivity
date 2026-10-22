@@ -23,6 +23,7 @@ jobs:
       # Step 3: Update README
 
       - name: Update README
+        shell: bash
         run: |
           echo "### Updated by ${{ github.actor }} on $(date '+%Y-%m-%d %H:%M:%S') [Commit: $(git rev-parse --short HEAD)]" >> README.md
         
