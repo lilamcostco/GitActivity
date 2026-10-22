@@ -12,12 +12,12 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
     
       # Step 2: Update index.html
       - name: Update index.html  
         run: sed -i '/<\/body>/i <p> Updated by Team Leader on '"$(date)"'</p>' index.html
-        if: github.actor == 'lilamcostco'     
+        if: github.actor == 'lilamcostco'
       
       # Step 3: Update README
 
