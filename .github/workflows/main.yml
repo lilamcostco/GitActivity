@@ -18,7 +18,10 @@ jobs:
       - name: Update index.html  
         if: github.actor == 'lilamcostco'
         run: |
-          sed -i '/<\/body>/i <p> Updated by Team Leader on '"$(date)"'</p>' index.html
+          ls -la
+          grep -n -i '</body>' index.html || echo "No </body> found"
+          sed -i -e "/<\/body>/I i <p>Updated by Team Leader on $(date)</p>" index.html
+          git diff --stat
       
       # Step 3: Update README
 
