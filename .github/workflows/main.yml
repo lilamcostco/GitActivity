@@ -16,7 +16,7 @@ jobs:
     
       # Step 2: Update index.html
       - name: Update index.html  
-        if: github.actor == 'lilamcostco'
+        # dsif: github.actor == 'lilamcostco'
         run: |
           ls -la
           grep -n -i '</body>' index.html || echo "No </body> found"
