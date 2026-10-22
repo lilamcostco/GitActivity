@@ -16,9 +16,9 @@ jobs:
     
       # Step 2: Update index.html
       - name: Update index.html  
+        if: github.actor == 'lilamcostco'
         run: |
           sed -i '/<\/body>/i <p> Updated by Team Leader on '"$(date)"'</p>' index.html
-        if: github.actor == 'lilamcostco'
       
       # Step 3: Update README
 
